@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Shubhank Saxena",
+        "designation": "DSC Lead",
+        "twitter": "https://twitter.com/",
+        "linkedin": "https://www.linkedin.com/",
+        "github": "https://github.com/",
+        "profileImage": "",
+        "website": ""
+    },
+    {
+        "name": "Kush Daga",
+        "designation": "Developer",
+        "twitter": "",
+        "linkedin": "https://www.linkedin.com/in/kushdaga",
+        "github": "https://github.com/kush-daga",
+        "profileImage": "",
+        "website": "https://kush-blog.netlify.com"
+    },
+    {
+        "name": "Name",
+        "designation": "Development",
+        "twitter": "https://twitter.com/",
+        "linkedin": "https://www.linkedin.com/",
+        "github": "https://www.github.com/",
+        "profileImage": "",
+        "website": ""
+    },
+    {
+        "name": "Name",
+        "designation": "Development",
+        "twitter": "https://twitter.com/",
+        "linkedin": "https://linkedin.com/",
+        "github": "https://github.com/",
+        "profileImage": "",
+        "website": "https://github.com"
+    },
+    {
+        "name": "Name",
+        "designation": "Development",
+        "twitter": "https://twitter.com/",
+        "linkedin": "",
+        "github": "https://github.com/",
+        "profileImage": "",
+        "website": ""
+    }
+]
