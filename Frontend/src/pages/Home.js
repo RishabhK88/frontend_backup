@@ -15,6 +15,7 @@ export default class Home extends Component {
                     <img
                         src={GoogleAssBg}
                         style={{
+                            zIndex: "-100",
                             position: "absolute",
                             left: "-22vw",
                             top: "-20vh",
