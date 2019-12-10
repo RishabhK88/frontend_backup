@@ -12,14 +12,14 @@ function App() {
                 {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
                 <Switch>
+                    <Route path="/about">
+                        <About />
+                    </Route>
                     <Route path="/testAxios">
                         <TestAxios />
                     </Route>
                     <Route path="/">
                         <Home />
-                    </Route>
-                    <Route path="/nav">
-                        <Nav />
                     </Route>
                 </Switch>
             </div>
@@ -29,8 +29,10 @@ function App() {
 
 export default App;
 
-{
-    /* <nav>
+function About() {
+    return <h2>About</h2>;
+}
+/* <nav>
 <ul>
 	<li>
 		<Link to="/">Home</Link>
@@ -43,7 +45,6 @@ export default App;
 	</li>
 </ul>
 </nav> */
-}
 
 // <div className="App">
 //             <header className="App-header">
