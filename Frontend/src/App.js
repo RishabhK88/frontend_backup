@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import TestAxios from "./pages/TestAxios";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
+import CardHead from "./components/Team/CardHead";
 
 function App() {
     return (
@@ -16,10 +17,12 @@ function App() {
                         <TestAxios />
                     </Route>
                     <Route path="/">
-                        <Home />
+                        {/* <Home /> */}
+                        <CardHead/>
                     </Route>
                     <Route path="/nav">
                         <Nav />
+                        {/* <CardHead/> */}
                     </Route>
                 </Switch>
             </div>
