@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import TestAxios from "./pages/TestAxios";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
-import CardHead from "./components/Team/CardHead";
+import Team from "./pages/team";
 
 function App() {
     return (
@@ -18,11 +18,11 @@ function App() {
                     </Route>
                     <Route path="/">
                         {/* <Home /> */}
-                        <CardHead/>
+                        {/* <CardHead/> */}
+                        <Team/>
                     </Route>
                     <Route path="/nav">
                         <Nav />
-                        {/* <CardHead/> */}
                     </Route>
                 </Switch>
             </div>

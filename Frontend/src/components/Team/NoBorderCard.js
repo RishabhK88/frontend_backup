@@ -10,8 +10,8 @@ export default class CardHead extends Component {
                     {/* <h6>a</h6> */}
                 </div>
                 <div style={styles.textContainer}>
-                    <b><h1>{this.props.title}</h1></b>
-                    <h2>{this.props.name}</h2>
+                    <b><p>{this.props.title}</p></b>
+                    <p>{this.props.name}</p>
                 </div>
             </div>
         );
@@ -22,15 +22,10 @@ export default class CardHead extends Component {
 const styles = {
     container: {
         display: 'flex',
-        borderStyle: "solid",
-        borderWidth: "2px",
-        borderColor: '#524e4e',
         flexDirection: "row",
         width: "400px",
         alignItems: 'center',
-        height: "200px",
-        margin: 60,
-        backgroundColor: "white"
+        height: "200px"
     },
     circle: {
         display: 'flex',
