@@ -8,8 +8,46 @@ import undrawAbout from "../assets/undraw_dev_productivity_umsq.svg";
 import "./styles/Home.css";
 import TeamPic from "../assets/undraw_team_spirit_hrr4.svg";
 import ContactPic from "../assets/undraw_contact_us_15o2.svg";
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://127.0.0.1:8000';
 
 export default class Home extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			name: "",
+			email: "",
+			message: "",
+			loading: false,
+			btnText: "Submit"
+		}
+	}
+
+	onChange = (e) => {
+		this.setState({ [e.target.name]: e.target.value });
+	}
+
+	onSubmit = (e) => {
+		e.preventDefault();
+
+		this.setState({ loading: true, btnText: "Sending...." })
+		// get our form data out of state
+		const { name, email, message } = this.state;
+
+		axios.post('/api/contactus/', { name, email, message })
+
+			.then(res => {
+				this.setState({ loading: false, name: "", email: "", message: "", btnText: "Submit" })
+			})
+
+			.catch(err => {
+				console.log(err);
+				this.setState({ loading: false, name: "", email: "", message: "", btnText: "Error" })
+			})
+	}
+
 	render() {
 		return (
 			<div>
@@ -86,15 +124,17 @@ export default class Home extends Component {
 							justifyContent: "space-between",
 							width: "80%",
 						}}>
-						<form style={styles.Form} method="post">
+						<form style={styles.Form} onSubmit={this.onSubmit}>
 							<ul style={styles.ul}>
 								<li style={styles.li}>
 									<input
 										style={styles.input}
 										type="text"
 										id="name"
-										name="user_name"
+										name="name"
 										placeholder="Name"
+										value={this.state.name}
+										onChange={this.onChange}
 									/>
 								</li>
 								<li style={styles.li}>
@@ -102,8 +142,10 @@ export default class Home extends Component {
 										style={styles.input}
 										type="email"
 										id="mail"
-										name="user_mail"
+										name="email"
 										placeholder="Email"
+										value={this.state.email}
+										onChange={this.onChange}
 									/>
 								</li>
 								<li style={styles.li}>
@@ -111,10 +153,15 @@ export default class Home extends Component {
 										style={styles.textArea}
 										id="msg"
 										placeholder="Message"
-										name="user_message"></textarea>
+										name="message"
+										value={this.state.message}
+										onChange={this.onChange}
+									></textarea>
 								</li>
 							</ul>
-							<button style={styles.FormButton}>Submit</button>
+							<button style={styles.FormButton}>
+								{this.state.loading ? "Sending...." : this.state.btnText}
+							</button>
 						</form>
 						<img
 							src={ContactPic}
