@@ -10,7 +10,7 @@ import TeamPic from "../assets/undraw_team_spirit_hrr4.svg";
 import ContactPic from "../assets/undraw_contact_us_15o2.svg";
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://127.0.0.1:8000';
+axios.defaults.baseURL = 'https://dsctiet.pythonanywhere.com';
 
 export default class Home extends Component {
 
