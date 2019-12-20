@@ -7,6 +7,7 @@ import iotImage from '../assets/undraw_Firmware_jw6u.svg';
 import softwareImage from '../assets/undraw_programming_2svr.svg';
 import mlImage from '../assets/undraw_Growing_qwt2.svg';
 import publicityImage from '../assets/undraw_social_girl_562b.svg';
+import prototypingImage from '../assets/undraw_3d_modeling_h60h.svg';
 // import Nav from "../components/Nav";
 
 export default class Team extends Component {
@@ -17,8 +18,8 @@ export default class Team extends Component {
                 <div style={{...styles.pageContainer, height: "100vh"}}>
                     <h1 style={{fontSize: 40}}>Meet the team</h1>
                     <div style={styles.cardContainer}>
-                        <CardHead title={'Lead'} name={'Shubhank Saxena'}/>
-                        <CardHead title={'Co Lead'} name={'Aman Arora'}/>
+                        <CardHead hrefL="https://www.google.com/" hrefG="https://www.google.com/" title={'Lead'} name={'Shubhank Saxena'}/>
+                        <CardHead hrefL="https://www.google.com/" hrefG="https://www.google.com/" title={'Co Lead'} name={'Aman Arora'}/>
                     </div>
                     <img
                         src={image}
@@ -127,6 +128,29 @@ export default class Team extends Component {
                     </div>
                     <img
                         src={publicityImage}
+                        style={{height: "275px", width: "700px"}}
+                    ></img>
+                    <div style={{display: "flex", alignItems: "center"}}>
+                        <NoBorderCard title={'Head'} name={'Jaskeerat Singh Randhawa'}/>
+                        <NoBorderCard title={'Head'} name={'Jaskeerat Singh Randhawa'}/>
+                        <NoBorderCard title={'Head'} name={'Jaskeerat Singh Randhawa'}/>
+                    </div>
+                    <div style={{display: "flex", alignItems: "center"}}>
+                        <NoBorderCard title={'Head'} name={'Jaskeerat Singh Randhawa'}/>
+                        <NoBorderCard title={'Head'} name={'Jaskeerat Singh Randhawa'}/>
+                        <NoBorderCard title={'Head'} name={'Jaskeerat Singh Randhawa'}/>
+                    </div>
+                </div>
+                <div style={styles.pageContainer}>
+                    <div style={{marginTop: 30}}>
+                        <h1>Hardware prototyping Team</h1>
+                    </div>
+                    <div style={styles.cardContainer}>
+                        <NoBorderCard title={'Head'} name={'Jaskeerat Singh Randhawa'}/>
+                        <NoBorderCard title={'Head'} name={'Jaskeerat Singh Randhawa'}/>
+                    </div>
+                    <img
+                        src={prototypingImage}
                         style={{height: "275px", width: "700px"}}
                     ></img>
                     <div style={{display: "flex", alignItems: "center"}}>

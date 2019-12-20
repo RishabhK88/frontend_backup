@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import styled from "styled-components";
-import Box from 'react-styled-box';
+import linkedin from './../../assets/linkedin.jpg';
+import github from './../../assets/github.png';
 
 export default class CardHead extends Component {
     render() {
@@ -12,6 +12,14 @@ export default class CardHead extends Component {
                 <div style={styles.textContainer}>
                     <b><h1>{this.props.title}</h1></b>
                     <h2>{this.props.name}</h2>
+                    <div style={styles.imageContainer}>
+                        <a href={this.props.hrefL}>
+                            <img src={linkedin} style={styles.image}></img>
+                        </a>
+                        <a href={this.props.hrefG}>
+                            <img src={github} style={styles.image}></img>
+                        </a>
+                    </div>
                 </div>
             </div>
         );
@@ -47,5 +55,15 @@ const styles = {
     },
     textContainer: {
         // paddingVertical: "50%"   
+    },
+    imageContainer: {
+        display: 'flex', 
+        alignItems: "center"
+    },
+    image: {
+        display: "flex", 
+        height: 25, 
+        width: 25,
+        margin: 10
     }
 }
