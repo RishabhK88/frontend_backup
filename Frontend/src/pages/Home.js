@@ -13,7 +13,7 @@ import "./styles/Home.css";
 
 import Gallery from "../components/Gallery";
 
-axios.defaults.baseURL = "http://127.0.0.1:8000";
+axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com";
 
 export default class Home extends Component {
     constructor(props) {
