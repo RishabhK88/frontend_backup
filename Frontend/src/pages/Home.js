@@ -77,12 +77,14 @@ export default class Home extends Component {
 		return (
 			<div>
 				<div
-					style={{
-						position: "sticky",
-						top: "0",
-						background: "#f3f3f3",
-						opacity: "0.7",
-					}}>
+					style={
+						{
+							// position: "sticky",
+							// top: "0",
+							// background: "#f3f3f3",
+							// opacity: "0.7",
+						}
+					}>
 					<Nav />
 				</div>
 
@@ -146,7 +148,7 @@ export default class Home extends Component {
 						width: "auto",
 						// display: "flex",
 						// alignItems: "center",
-						//                      overflow: "hidden"
+						overflow: "hidden",
 					}}>
 					<Gallery />
 				</div>
