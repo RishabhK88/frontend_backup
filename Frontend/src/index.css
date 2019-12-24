@@ -16,3 +16,7 @@ body {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+::selection {
+	background: #ffb7b7; /* WebKit/Blink Browsers */
+	color: black;
+}
