@@ -1,39 +1,43 @@
+/** @format */
+
 import React from "react";
 // import logo from "./logo.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import TestAxios from "./pages/TestAxios";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
-import Team from "./pages/team";
-
+import Team from "./pages/Team";
 function App() {
-    return (
-        <Router>
-            <div>
-                {/* A <Switch> looks through its children <Route>s and
+	return (
+		<Router>
+			<div>
+				{/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-                <Switch>
-                    <Route path="/testAxios">
-                        <TestAxios />
-                    </Route>
-                    <Route path="/">
-                        {/* <Home /> */}
-                        {/* <CardHead/> */}
-                        <Team/>
-                    </Route>
-                    <Route path="/nav">
-                        <Nav />
-                    </Route>
-                </Switch>
-            </div>
-        </Router>
-    );
+				<Switch>
+					<Route path="/about">
+						<About />
+					</Route>
+					<Route path="/testAxios">
+						<TestAxios />
+					</Route>
+					<Route path="/team">
+						<Team />
+					</Route>
+					<Route path="/">
+						<Home />
+					</Route>
+				</Switch>
+			</div>
+		</Router>
+	);
 }
 
 export default App;
 
-{
-    /* <nav>
+function About() {
+	return <h2>About</h2>;
+}
+/* <nav>
 <ul>
 	<li>
 		<Link to="/">Home</Link>
@@ -46,7 +50,6 @@ export default App;
 	</li>
 </ul>
 </nav> */
-}
 
 // <div className="App">
 //             <header className="App-header">
