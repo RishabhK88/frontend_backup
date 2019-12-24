@@ -10,8 +10,17 @@ import TeamPic from "../assets/undraw_team_spirit_hrr4.svg";
 import ContactPic from "../assets/undraw_contact_us_15o2.svg";
 import axios from "axios";
 import "./styles/Home.css";
-
 import Gallery from "../components/Gallery";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    fab,
+    faFacebook,
+    faTwitter,
+    faYoutube,
+    faMedium,
+    faDev,
+    faInstagram
+} from "@fortawesome/free-brands-svg-icons";
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com";
 
@@ -210,13 +219,52 @@ export default class Home extends Component {
                                     : this.state.btnText}
                             </button>
                         </form>
-                        <img
-                            src={ContactPic}
+                        <div
                             style={{
-                                height: "65%",
-                                marginTop: "5%",
-                                height: "60%"
-                            }}></img>
+                                display: "flex",
+                                flexDirection: "column"
+                            }}>
+                            <img
+                                src={ContactPic}
+                                style={{
+                                    height: "65%",
+                                    marginTop: "5%",
+                                    height: "60%"
+                                }}></img>
+                            <div
+                                style={{
+                                    display: "flex",
+                                    width: "70%",
+                                    margin: "auto",
+                                    justifyContent: "space-around",
+                                    fontSize: "2em"
+                                }}>
+                                <FontAwesomeIcon
+                                    icon={faFacebook}
+                                    style={{ cursor: "pointer" }}
+                                />
+                                <FontAwesomeIcon
+                                    icon={faInstagram}
+                                    style={{ cursor: "pointer" }}
+                                />
+                                <FontAwesomeIcon
+                                    icon={faTwitter}
+                                    style={{ cursor: "pointer" }}
+                                />
+                                <FontAwesomeIcon
+                                    icon={faYoutube}
+                                    style={{ cursor: "pointer" }}
+                                />
+                                <FontAwesomeIcon
+                                    icon={faMedium}
+                                    style={{ cursor: "pointer" }}
+                                />
+                                <FontAwesomeIcon
+                                    icon={faDev}
+                                    style={{ cursor: "pointer" }}
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -224,15 +272,11 @@ export default class Home extends Component {
     }
 }
 
-const flickityOptions = {
-    initialIndex: 0,
-    setGallerySize: false
-};
-
 //hahaha
 
 //LOLOL
-//ignore the comments below, for future reference, do not delete pls
+
+//ignore the comments below, (for future reference), do not delete pls
 
 // /** @format */
 // var mql = window.matchMedia("(max-width: 600px)");
