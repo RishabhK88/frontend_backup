@@ -22,7 +22,7 @@ import {
 	faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
-axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com";
+axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
 export default class Home extends Component {
 	constructor(props) {
@@ -49,7 +49,7 @@ export default class Home extends Component {
 		const { name, email, message } = this.state;
 
 		axios
-			.post("/api/contactus/", { name, email, message })
+			.post("/contactus/", { name, email, message })
 
 			.then(res => {
 				this.setState({

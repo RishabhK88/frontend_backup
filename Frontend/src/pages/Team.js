@@ -12,10 +12,65 @@ import publicityImage from "../assets/undraw_social_girl_562b.svg";
 import prototypingImage from "../assets/undraw_3d_modeling_h60h.svg";
 import "./styles/Team.css";
 import Nav from "../components/Nav";
+import axios from "axios";
 // import Nav from "../components/Nav";
 
+axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
+
 export default class Team extends Component {
+
+	state = {
+		teamWiseDetails: [{
+			members: []
+		}],
+		isLoading: true
+	}
+
+	fetchTeamData = () => {
+		axios.get("/team/").then(res => {
+			let data = res.data
+			this.setState({ teamWiseDetails: data, isLoading: false })
+			console.log(this.state.teamWiseDetails)
+		});
+	}
+
+
+	componentWillMount() {
+		this.setState({ isLoading: true })
+		this.fetchTeamData();
+	}
+
+	/* 	sampleRendering = () => {
+			if (!this.state.isLoading) {
+				this.state.teamWiseDetails[0].members.map((item, index) => {
+					return (
+						<NoBorderCard
+							title={item.role}
+							name={item.name}
+							image={item.image}
+						/>
+					);
+				})
+			}
+		} */
+
 	render() {
+
+		const members = []
+
+		for (const item of this.state.teamWiseDetails[0].members) {
+
+			if (!this.state.isLoading) {
+
+				members.push(
+					<NoBorderCard
+						title={item.role}
+						name={item.name}
+						image={item.image}
+					/>
+				)
+			}
+		}
 		return (
 			<div>
 				<Nav />
@@ -67,22 +122,10 @@ export default class Team extends Component {
 							/>
 						</div>
 						<img src={image2} style={{ height: "300px", width: "700px" }}></img>
-						<div style={{ display: "flex", alignItems: "center" }}>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
+						<div style={{ display: "flex", flexWrap: "wrap", alignContent: "space-around", justifyContent: "center" }}>
+
+							{members}
+
 						</div>
 						<div style={{ display: "flex", alignItems: "center" }}>
 							<NoBorderCard
