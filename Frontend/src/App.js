@@ -8,14 +8,22 @@ import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Team from "./pages/Team";
 import About from "./pages/About";
+import Achievments from "./pages/Achievments";
+import Events from "./pages/Events";
 
 function App() {
     return (
         <Router>
             <div>
-                {/* A <Switch> looks through its children <Route>s and
+                {/* A <Switch> looks through its children <Router>s and
             renders the first one that matches the current URL. */}
                 <Switch>
+                    <Route path="/achievments">
+                        <Achievments />
+                    </Route>
+                    <Route path="/events">
+                        <Events></Events>
+                    </Route>
                     <Route path="/about">
                         <About />
                     </Route>

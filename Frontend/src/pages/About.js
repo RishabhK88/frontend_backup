@@ -3,6 +3,7 @@ import "./styles/About.css";
 import styled from "styled-components";
 import AboutImage from "../assets/undraw_about_us_page_ee1k.svg";
 import Nav from "../components/Nav";
+import { Link } from "react-router-dom";
 export default class About extends Component {
     render() {
         return (
@@ -19,21 +20,29 @@ export default class About extends Component {
                     <BodyContainer>
                         <HeadingAbout>About Us</HeadingAbout>
                         <PAbout>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap
-                            into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the
-                            release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing
-                            software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
+                            Google DSC is a Developer Student Club which is a
+                            technical community that combines all the university
+                            students, and all the other students who learn,
+                            share ideas and come up with viable projects that
+                            are likely to solve day to day universe problems.
+                            Additionally, it aims for university students to
+                            help them build their mobile, web, machine learning,
+                            cloud skills. The clubs are intended as a space for
+                            students to try out new ideas and collaborate to
+                            solve mobile and web development problems.
                         </PAbout>
                         <ButtonContainer>
-                            <ButtonAbout>View the team!</ButtonAbout>
+                            <ButtonAbout>
+                                <Link
+                                    style={{
+                                        width: "fit-content",
+                                        textDecoration: "none",
+                                        color: "#f3f3f3"
+                                    }}
+                                    to="/team">
+                                    View the team!
+                                </Link>
+                            </ButtonAbout>
                         </ButtonContainer>
                     </BodyContainer>
                 </AboutContainer>
@@ -65,7 +74,6 @@ const BodyContainer = styled.div`
 `;
 const HeadingAbout = styled.h1`
     font-size: 3rem;
-
     color: black;
     /* width: fit-content; */
     text-align: center;
