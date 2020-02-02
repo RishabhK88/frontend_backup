@@ -2,8 +2,31 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Card from "../components/Card";
 import Nav from "../components/Nav";
+import axios from "axios";
+
+axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
 export default class Achievments extends Component {
+
+    state = {
+        achievements: [],
+        isLoading: true
+    }
+
+    fetchAchievements = () => {
+        axios.get("/achievements/").then(res => {
+            let data = res.data
+            this.setState({ achievements: data, isLoading: false })
+            console.log(this.state.achievements)
+        });
+    }
+
+
+    componentWillMount() {
+        this.setState({ isLoading: true })
+        this.fetchAchievements();
+    }
+
     render() {
         return (
             <div>
