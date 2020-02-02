@@ -33,6 +33,13 @@ function App() {
                     <Route path="/team">
                         <Team />
                     </Route>
+                    <Route path="/communityJoin">
+                        <div>
+                            <a href="https://join.slack.com/t/dscthapar-gspatiala/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M">
+                                Join Our Slack!
+                            </a>
+                        </div>
+                    </Route>
                     <Route path="/">
                         <Home />
                     </Route>
