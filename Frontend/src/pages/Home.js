@@ -23,6 +23,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
 import Lazy from "../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg";
+import { Link } from "react-router-dom";
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
 export default class Home extends Component {
@@ -150,9 +151,11 @@ export default class Home extends Component {
                         <img src={GoogleAssBg} className="imgBg2"></img>
                         <img src={undrawAbout} className="imgAboutUndraw"></img>
                         <button className="AboutButton1">About us</button>
-                        <button className="AboutButton2">
-                            Join our Slack!
-                        </button>
+                        <Link to="/communityJoin">
+                            <button className="AboutButton2">
+                                Join our Slack!
+                            </button>
+                        </Link>
                     </div>
 
                     <div
