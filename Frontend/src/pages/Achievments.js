@@ -6,6 +6,8 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
+const colors = ["red", "green", "yellow", "blue"]
+
 export default class Achievments extends Component {
 
     state = {
@@ -27,7 +29,30 @@ export default class Achievments extends Component {
         this.fetchAchievements();
     }
 
+    /* renderAchievements = () => {
+        this.state.achievements.map((item, index) => {
+            console.log(item);
+            return (
+                
+            );
+        })
+    } */
+
     render() {
+
+        const achievements = []
+
+        for (const item of this.state.achievements) {
+            achievements.push(
+                <Card
+                    bg={colors[Math.floor(Math.random() * colors.length)]}
+                    heading={item.title}
+                    sub_heading={item.sub_title}
+                    content={item.content}
+                />
+            )
+        }
+
         return (
             <div>
                 <Nav></Nav>
@@ -36,9 +61,7 @@ export default class Achievments extends Component {
                         We are proud of our achievments
                     </h1>
                     <SubContainer>
-                        <Card bg="red"></Card>
-                        <Card bg="green"></Card>
-                        <Card bg="blue"></Card>
+                        {achievements}
                     </SubContainer>
                 </Container>
             </div>
