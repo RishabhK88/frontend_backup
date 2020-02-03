@@ -41,11 +41,7 @@ export default class Nav extends Component {
                             Achievments
                         </Link>
                     </div>
-                    <div>
-                        <Link to="/communityJoin" style={styles.noDec}>
-                            Join Slack!
-                        </Link>
-                    </div>
+
                     {/* <div>
                         <Link to="/blog" style={styles.noDec}>
                             Projects
