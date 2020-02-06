@@ -199,6 +199,7 @@ export default class Home extends Component {
                         style={{
                             height: "100vh",
                             width: "auto",
+			    backgroundColor:"#c1c1c1",
                             // display: "flex",
                             // alignItems: "center",
                             overflow: "hidden"
