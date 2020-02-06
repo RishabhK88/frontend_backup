@@ -1,7 +1,6 @@
 /** @format */
 
 import React from "react";
-// import logo from "./logo.svg";
 import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 import TestAxios from "./pages/TestAxios";
 import Home from "./pages/Home";
