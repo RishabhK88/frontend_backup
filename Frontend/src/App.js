@@ -10,6 +10,7 @@ import Team from "./pages/Team";
 import About from "./pages/About";
 import Achievments from "./pages/Achievments";
 import Events from "./pages/Events";
+import {RemoveScrollBar} from 'react-remove-scroll-bar'
 
 function App() {
     return (
