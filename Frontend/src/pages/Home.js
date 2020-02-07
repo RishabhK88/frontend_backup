@@ -37,7 +37,8 @@ export default class Home extends Component {
             email: "",
             message: "",
             loading: false,
-            btnText: "Submit"
+            btnText: "Submit",
+            isTop: true
         };
     }
 
@@ -109,19 +110,8 @@ export default class Home extends Component {
                         </a>
                     </h1>
                 </ResponsiveDiv>
+                <Nav />
                 <SubMainContainer>
-                    <div
-                        style={
-                            {
-                                // position: "sticky",
-                                // top: "0",
-                                // background: "#f3f3f3",
-                                // opacity: "0.7",
-                            }
-                        }>
-                        <Nav />
-                    </div>
-
                     <div
                         className="div1"
                         style={{
@@ -324,6 +314,7 @@ const SubMainContainer = styled.div`
         display: none;
     }
 `;
+
 const ResponsiveDiv = styled.div`
     overflow: hidden;
     text-align: center;
