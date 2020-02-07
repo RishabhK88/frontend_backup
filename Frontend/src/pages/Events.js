@@ -3,8 +3,61 @@ import styled from "styled-components";
 import Card from "../components/Card";
 import Nav from "../components/Nav";
 import CardEvent from "../components/CardEvent";
+import axios from 'axios';
+
+axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 export default class Events extends Component {
+
+    state = {
+        events: [],
+        isLoading: true
+    }
+
+    fetchEvents = () => {
+        axios.get("/events/").then(res => {
+            let data = res.data
+            this.setState({ events: data, isLoading: false })
+            // console.log(this.state.events)
+        });
+    }
+
+
+    componentWillMount() {
+        this.setState({ isLoading: true })
+        this.fetchEvents();
+    }
+
+
     render() {
+
+        const events = []
+
+        for (const item of this.state.events) {
+            events.push(
+                <CardEvent
+                    key={item.id}
+                    bg={getRandomColor()}
+                    title={item.title}
+                    info={item.info}
+                    date={item.date}
+                    venue={item.venue}
+                    link={item.link}
+                    topics={item.topics}
+                />
+            )
+        }
+
+
         return (
             <div style={{ overflowX: "hidden" }}>
                 <Nav></Nav>
@@ -28,7 +81,7 @@ export default class Events extends Component {
                     </h1>
 
                     <SubContainer>
-                        <CardEvent />
+                        {events}
                     </SubContainer>
                 </Container>
             </div>

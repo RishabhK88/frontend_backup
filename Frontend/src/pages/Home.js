@@ -12,21 +12,19 @@ import "./styles/Home.css";
 import Gallery from "../components/Gallery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    fab,
     faFacebook,
     faTwitter,
     faYoutube,
     faMedium,
-    faDev,
-    faInstagram
+    faInstagram,
+    faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
 import Lazy from "../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg";
 import { Link } from "react-router-dom";
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
-const url =
-    "https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing";
+const URL ="https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing";
 
 export default class Home extends Component {
     constructor(props) {
@@ -37,7 +35,8 @@ export default class Home extends Component {
             email: "",
             message: "",
             loading: false,
-            btnText: "Submit"
+            btnText: "Submit",
+            isTop: true
         };
     }
 
@@ -109,19 +108,8 @@ export default class Home extends Component {
                         </a>
                     </h1>
                 </ResponsiveDiv>
+                <Nav />
                 <SubMainContainer>
-                    <div
-                        style={
-                            {
-                                // position: "sticky",
-                                // top: "0",
-                                // background: "#f3f3f3",
-                                // opacity: "0.7",
-                            }
-                        }>
-                        <Nav />
-                    </div>
-
                     <div
                         className="div1"
                         style={{
@@ -156,7 +144,7 @@ export default class Home extends Component {
                         <img src={undrawAbout} className="imgAboutUndraw"></img>
                         <button
                             onClick={() => {
-                                window.open(url, "_blank");
+                                window.open(URL, "_blank");
                             }}
                             className="AboutButton1">
                             Code of Conduct
@@ -288,27 +276,45 @@ export default class Home extends Component {
                                         fontSize: "2em"
                                     }}>
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.facebook.com/dscthapar/", "_blank")
+                                        }
                                         icon={faFacebook}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.instagram.com/hacktiet/", "_blank")
+                                        }
                                         icon={faInstagram}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.twitter.com/dsctiet?s=09", "_blank")
+                                        }
                                         icon={faTwitter}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.youtube.com/channel/UCl235NVnbWqqCT7NQAIUzVQ", "_blank")
+                                        }
                                         icon={faYoutube}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://medium.com/@dsc.tiet", "_blank")
+                                        }
                                         icon={faMedium}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
-                                        icon={faDev}
+                                        onClick={()=>
+                                            window.open("https://www.linkedin.com/company/developer-student-club-thapar/?viewAsMember=true", "_blank")
+                                        }
+                                        icon={faLinkedin}
                                         style={{ cursor: "pointer" }}
                                     />
                                 </div>
@@ -333,6 +339,7 @@ const SubMainContainer = styled.div`
         display: none;
     }
 `;
+
 const ResponsiveDiv = styled.div`
     overflow: hidden;
     text-align: center;

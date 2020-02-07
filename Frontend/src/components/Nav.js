@@ -5,78 +5,50 @@ import { Link } from "react-router-dom";
 // import "./Nav.style.js";
 
 import styled from "styled-components";
+import NavSubPart from "./NavSubPart";
+
 export default class Nav extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isTop: true
+        };
+    }
+    componentDidMount() {
+        document.addEventListener("scroll", () => {
+            const isTop = window.scrollY < 50;
+            if (isTop !== this.state.isTop) {
+                this.setState({ isTop });
+                console.log("LOL");
+                console.log(this.state.isTop);
+            }
+        });
+    }
     render() {
         return (
-            <div>
-                <Container>
-                    <div>
-                        <Link to="/" style={styles.noDec}>
-                            Home
-                        </Link>
+            <React.Fragment>
+                {this.state.isTop ? (
+                    <div
+                        style={{
+                            position: "sticky",
+                            top: "0"
+                        }}>
+                        <NavSubPart />
                     </div>
-                    <div>
-                        <Link to="/about" style={styles.noDec}>
-                            About
-                        </Link>
+                ) : (
+                    <div
+                        style={{
+                            position: "sticky",
+                            top: "0",
+                            background: "white",
+                            zIndex: 100,
+                            boxShadow: "1px 5px rgba(232, 232, 232, 0.7) "
+                        }}>
+                        <NavSubPart />
                     </div>
-                    <div>
-                        <Link to="/team" style={styles.noDec}>
-                            Team
-                        </Link>
-                    </div>
-                    <div>
-                        <Link to="/events" style={styles.noDec}>
-                            Events
-                        </Link>
-                    </div>
-                    <div>
-                        <Link to="/contact" style={styles.noDec}>
-                            Contact
-                        </Link>
-                    </div>
-
-                    <div>
-                        <Link to="/achievments" style={styles.noDec}>
-                            Achievments
-                        </Link>
-                    </div>
-
-                    {/* <div>
-                        <Link to="/blog" style={styles.noDec}>
-                            Projects
-                        </Link>
-                    </div>
-                    <div>
-                        <Link to="/blog" style={styles.noDec}>
-                            Blog
-                        </Link>
-                    </div> */}
-                </Container>
-            </div>
+                )}
+            </React.Fragment>
         );
     }
 }
-
-// <View style={styles.container}>
-//   <Text style={[styles.title, this.props.isActive && styles.activeTitle]} />
-// </View>
-
-const styles = {
-    noDec: {
-        textDecoration: "none",
-        color: "black"
-    }
-};
-
-const Container = styled.nav`
-    justify-content: space-around;
-    align-items: center;
-    display: flex;
-    margin: auto;
-    width: 70%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    font-size: 1.3em;
-    font-weight: 300;
-`;
