@@ -18,7 +18,8 @@ import {
     faYoutube,
     faMedium,
     faDev,
-    faInstagram
+    faInstagram,
+    faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
 import Lazy from "../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg";
@@ -288,27 +289,45 @@ export default class Home extends Component {
                                         fontSize: "2em"
                                     }}>
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.facebook.com/dscthapar/", "_blank")
+                                        }
                                         icon={faFacebook}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.instagram.com/hacktiet/", "_blank")
+                                        }
                                         icon={faInstagram}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.twitter.com/dsctiet?s=09", "_blank")
+                                        }
                                         icon={faTwitter}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.youtube.com/channel/UCl235NVnbWqqCT7NQAIUzVQ", "_blank")
+                                        }
                                         icon={faYoutube}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://medium.com/@dsc.tiet", "_blank")
+                                        }
                                         icon={faMedium}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
-                                        icon={faDev}
+                                        onClick={()=>
+                                            window.open("https://www.linkedin.com/company/developer-student-club-thapar/?viewAsMember=true", "_blank")
+                                        }
+                                        icon={faLinkedin}
                                         style={{ cursor: "pointer" }}
                                     />
                                 </div>
