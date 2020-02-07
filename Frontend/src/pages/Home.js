@@ -5,7 +5,6 @@ import Nav from "../components/Nav";
 import GoogleAssBg from "../assets/1200px-Google_Assistant_logo.svg.png";
 import Logo from "../assets/unnamed.png";
 import undrawAbout from "../assets/undraw_dev_productivity_umsq.svg";
-
 import TeamPic from "../assets/undraw_team_spirit_hrr4.svg";
 import ContactPic from "../assets/undraw_contact_us_15o2.svg";
 import axios from "axios";
@@ -25,9 +24,6 @@ import styled from "styled-components";
 import Lazy from "../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg";
 import { Link } from "react-router-dom";
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
-
-
-const url = 'https://docs.google.com/document/d/1bbpf78aMSH2ntSZEWR09Q05OVDHFp6IoFlVHtcvC0eQ/edit?usp=sharing';
 
 export default class Home extends Component {
     constructor(props) {
@@ -79,6 +75,8 @@ export default class Home extends Component {
     };
 
     render() {
+        const url =
+            "https://docs.google.com/document/d/1bbpf78aMSH2ntSZEWR09Q05OVDHFp6IoFlVHtcvC0eQ/edit?usp=sharing";
         return (
             <MainContainer>
                 <ResponsiveDiv>
@@ -155,10 +153,9 @@ export default class Home extends Component {
                         <img src={undrawAbout} className="imgAboutUndraw"></img>
                         <button
                             onClick={() => {
-                                window.open(url, '_blank');
+                                window.open(url, "_blank");
                             }}
-                            className="AboutButton1"
-                        >
+                            className="AboutButton1">
                             Code of Conduct
                         </button>
                         <Link to="/communityJoin">
@@ -199,7 +196,6 @@ export default class Home extends Component {
                         style={{
                             height: "100vh",
                             width: "auto",
-			    backgroundColor:"#c1c1c1",
                             // display: "flex",
                             // alignItems: "center",
                             overflow: "hidden"

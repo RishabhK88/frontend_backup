@@ -2,10 +2,10 @@
 
 import React, { Component } from "react";
 import "./Gallery.css";
-import DscFamily from "../assets/team.jpg";
-import EventsImage from "../assets/eventimage.jpg";
-import ProjectsImage from "../assets/projects.jpg";
-import CommunityImage from "../assets/community.jpg";
+import DscFamily from "../assets/team.webp";
+import EventsImage from "../assets/eventimage.webp";
+import ProjectsImage from "../assets/projects.webp";
+import CommunityImage from "../assets/community.webp";
 import { Link } from "react-router-dom";
 const slideData = [
     {
