@@ -66,7 +66,7 @@ export default class Achievments extends Component {
 
         return (
             <div>
-                <Nav></Nav>
+                <Nav active="achievments"></Nav>
                 <Container>
                     <h1 style={{ textAlign: "center", marginBottom: "2em" }}>
                         We are proud of our achievments

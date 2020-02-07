@@ -60,7 +60,7 @@ export default class Events extends Component {
 
         return (
             <div style={{ overflowX: "hidden" }}>
-                <Nav></Nav>
+                <Nav active="events"></Nav>
                 <Container>
                     <h1
                         style={{

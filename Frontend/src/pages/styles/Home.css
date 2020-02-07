@@ -194,6 +194,11 @@ ul {
     height: 5vh;
 }
 
+.active, .btn:hover {
+    background-color: #666;
+    color: white;
+}
+
 .LogoFooterContainer {
     margin: 1vh;
 }

@@ -3,39 +3,53 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 export default class NavSubPart extends Component {
+    state = {
+        active: this.props.active
+    }
     render() {
         return (
             <Container>
                 <div>
-                    <Link to="/" style={styles.noDec}>
+                    {this.state.active === "home" ? (<Link to="/" style={styles.noDec, { textDecoration: "underline" }}>
                         Home
-                    </Link>
+                        </Link>) : (<Link to="/" style={styles.noDec}>
+                            Home
+                        </Link>)}
                 </div>
                 <div>
-                    <Link to="/about" style={styles.noDec}>
+                    {this.state.active === "about" ? (<Link to="/about" style={styles.noDec, { textDecoration: "underline" }}>
                         About
-                    </Link>
+                        </Link>) : (<Link to="/about" style={styles.noDec}>
+                            About
+                        </Link>)}
                 </div>
                 <div>
-                    <Link to="/team" style={styles.noDec}>
+                    {this.state.active === "team" ? (<Link to="/team" style={styles.noDec, { textDecoration: "underline" }}>
                         Team
-                    </Link>
+                        </Link>) : (<Link to="/team" style={styles.noDec}>
+                            Team
+                        </Link>)}
                 </div>
                 <div>
-                    <Link to="/events" style={styles.noDec}>
+                    {this.state.active === "events" ? (<Link to="/events" style={styles.noDec, { textDecoration: "underline" }}>
                         Events
-                    </Link>
+                        </Link>) : (<Link to="/events" style={styles.noDec}>
+                            Events
+                        </Link>)}
                 </div>
                 <div>
-                    <Link to="/contact" style={styles.noDec}>
+                    {this.state.active === "contact" ? (<Link to="/contact" style={styles.noDec, { textDecoration: "underline" }}>
                         Contact
-                    </Link>
+                        </Link>) : (<Link to="/contact" style={styles.noDec}>
+                            Contact
+                        </Link>)}
                 </div>
-
                 <div>
-                    <Link to="/achievments" style={styles.noDec}>
-                        Achievments
-                    </Link>
+                    {this.state.active === "achievments" ? (<Link to="/achievments" style={styles.noDec, { textDecoration: "underline" }}>
+                        Achievements
+                        </Link>) : (<Link to="/achievments" style={styles.noDec}>
+                            Achievements
+                        </Link>)}
                 </div>
             </Container>
         );

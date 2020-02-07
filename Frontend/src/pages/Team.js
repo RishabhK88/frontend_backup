@@ -73,7 +73,7 @@ export default class Team extends Component {
 		}
 		return (
 			<div>
-				<Nav />
+				<Nav active="team" />
 				<div style={styles.container}>
 					<div style={{ ...styles.pageContainer, height: "100vh" }}>
 						<h1
