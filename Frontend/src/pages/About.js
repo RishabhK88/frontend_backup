@@ -8,7 +8,7 @@ export default class About extends Component {
     render() {
         return (
             <div>
-                <Nav />
+                <Nav active="about" />
                 <AboutContainer>
                     <ImageContainer>
                         <img

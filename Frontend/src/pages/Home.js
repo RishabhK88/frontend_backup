@@ -109,8 +109,7 @@ export default class Home extends Component {
                         </a>
                     </h1>
                 </ResponsiveDiv>
-                <Nav />
-
+                <Nav active="home" />
                 <SubMainContainer>
                     <div
                         className="div1"

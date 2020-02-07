@@ -34,7 +34,7 @@ export default class Nav extends Component {
                             position: "sticky",
                             top: "0"
                         }}>
-                        <NavSubPart />
+                        <NavSubPart active={this.props.active} />
                     </div>
                 ) : (
                     <div
@@ -45,7 +45,7 @@ export default class Nav extends Component {
                             zIndex: 100,
                             boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" 
                         }}>
-                        <NavSubPart />
+                        <NavSubPart active={this.props.active} />
                     </div>
                 )}
             </React.Fragment>
