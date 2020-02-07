@@ -25,6 +25,9 @@ import Lazy from "../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg";
 import { Link } from "react-router-dom";
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
+const url =
+    "https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing";
+
 export default class Home extends Component {
     constructor(props) {
         super(props);
