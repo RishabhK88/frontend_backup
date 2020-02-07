@@ -24,7 +24,8 @@ import Lazy from "../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg";
 import { Link } from "react-router-dom";
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
-const URL ="https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing";
+const URL =
+    "https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing";
 
 export default class Home extends Component {
     constructor(props) {
@@ -109,6 +110,7 @@ export default class Home extends Component {
                     </h1>
                 </ResponsiveDiv>
                 <Nav />
+
                 <SubMainContainer>
                     <div
                         className="div1"
@@ -215,7 +217,9 @@ export default class Home extends Component {
                                 width: "80%"
                             }}>
                             <div class="Form">
-                                <form style={{ height: "100%", width: "100%" }} onSubmit={this.onSubmit}>
+                                <form
+                                    style={{ height: "100%", width: "100%" }}
+                                    onSubmit={this.onSubmit}>
                                     <ul>
                                         <li>
                                             <input
@@ -244,7 +248,9 @@ export default class Home extends Component {
                                                 placeholder="Message"
                                                 name="message"
                                                 value={this.state.message}
-                                                onChange={this.onChange}></textarea>
+                                                onChange={
+                                                    this.onChange
+                                                }></textarea>
                                         </li>
                                     </ul>
                                     <button className="FormButton">
@@ -276,43 +282,61 @@ export default class Home extends Component {
                                         fontSize: "2em"
                                     }}>
                                     <FontAwesomeIcon
-                                        onClick={()=>
-                                            window.open("https://www.facebook.com/dscthapar/", "_blank")
+                                        onClick={() =>
+                                            window.open(
+                                                "https://www.facebook.com/dscthapar/",
+                                                "_blank"
+                                            )
                                         }
                                         icon={faFacebook}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
-                                        onClick={()=>
-                                            window.open("https://www.instagram.com/hacktiet/", "_blank")
+                                        onClick={() =>
+                                            window.open(
+                                                "https://www.instagram.com/hacktiet/",
+                                                "_blank"
+                                            )
                                         }
                                         icon={faInstagram}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
-                                        onClick={()=>
-                                            window.open("https://www.twitter.com/dsctiet?s=09", "_blank")
+                                        onClick={() =>
+                                            window.open(
+                                                "https://www.twitter.com/dsctiet?s=09",
+                                                "_blank"
+                                            )
                                         }
                                         icon={faTwitter}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
-                                        onClick={()=>
-                                            window.open("https://www.youtube.com/channel/UCl235NVnbWqqCT7NQAIUzVQ", "_blank")
+                                        onClick={() =>
+                                            window.open(
+                                                "https://www.youtube.com/channel/UCl235NVnbWqqCT7NQAIUzVQ",
+                                                "_blank"
+                                            )
                                         }
                                         icon={faYoutube}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
-                                        onClick={()=>
-                                            window.open("https://medium.com/@dsc.tiet", "_blank")
+                                        onClick={() =>
+                                            window.open(
+                                                "https://medium.com/@dsc.tiet",
+                                                "_blank"
+                                            )
                                         }
                                         icon={faMedium}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
-                                        onClick={()=>
-                                            window.open("https://www.linkedin.com/company/developer-student-club-thapar/?viewAsMember=true", "_blank")
+                                        onClick={() =>
+                                            window.open(
+                                                "https://www.linkedin.com/company/developer-student-club-thapar/?viewAsMember=true",
+                                                "_blank"
+                                            )
                                         }
                                         icon={faLinkedin}
                                         style={{ cursor: "pointer" }}
@@ -322,7 +346,13 @@ export default class Home extends Component {
                         </div>
                         <br></br>
                         <hr style={{ width: "100%" }}></hr>
-                        <div className="LogoFooterContainer" style={{display:"flex", justifyContent:"space-between",width:"90%"}}>
+                        <div
+                            className="LogoFooterContainer"
+                            style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                                width: "90%"
+                            }}>
                             <img src={Logo} className="LogoFooter"></img>
                             <p>© Copyright 2020 DSC TIET | Developed with ❤️</p>
                         </div>

@@ -7,6 +7,7 @@ import EventsImage from "../assets/eventimage.webp";
 import ProjectsImage from "../assets/projects.webp";
 import CommunityImage from "../assets/community.webp";
 import { Link } from "react-router-dom";
+
 const slideData = [
     {
         index: 0,
