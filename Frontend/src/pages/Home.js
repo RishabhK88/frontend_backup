@@ -199,7 +199,7 @@ export default class Home extends Component {
                         style={{
                             height: "100vh",
                             width: "auto",
-			    backgroundColor:"#c1c1c1",
+                            backgroundColor: "#c1c1c1",
                             // display: "flex",
                             // alignItems: "center",
                             overflow: "hidden"
@@ -227,48 +227,51 @@ export default class Home extends Component {
                                 justifyContent: "space-between",
                                 width: "80%"
                             }}>
-                            <form className="Form" onSubmit={this.onSubmit}>
-                                <ul>
-                                    <li>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            placeholder="Name"
-                                            value={this.state.name}
-                                            onChange={this.onChange}
-                                        />
-                                    </li>
-                                    <li>
-                                        <input
-                                            type="email"
-                                            id="mail"
-                                            name="email"
-                                            placeholder="Email"
-                                            value={this.state.email}
-                                            onChange={this.onChange}
-                                        />
-                                    </li>
-                                    <li className="li">
-                                        <textarea
-                                            className="textArea"
-                                            id="msg"
-                                            placeholder="Message"
-                                            name="message"
-                                            value={this.state.message}
-                                            onChange={this.onChange}></textarea>
-                                    </li>
-                                </ul>
-                                <button className="FormButton">
-                                    {this.state.loading
-                                        ? "Sending...."
-                                        : this.state.btnText}
-                                </button>
-                            </form>
+                            <div class="Form">
+                                <form style={{height: "100%", width: "100%"}} onSubmit={this.onSubmit}>
+                                    <ul>
+                                        <li>
+                                            <input
+                                                type="text"
+                                                id="name"
+                                                name="name"
+                                                placeholder="Name"
+                                                value={this.state.name}
+                                                onChange={this.onChange}
+                                            />
+                                        </li>
+                                        <li>
+                                            <input
+                                                type="email"
+                                                id="mail"
+                                                name="email"
+                                                placeholder="Email"
+                                                value={this.state.email}
+                                                onChange={this.onChange}
+                                            />
+                                        </li>
+                                        <li className="li">
+                                            <textarea
+                                                className="textArea"
+                                                id="msg"
+                                                placeholder="Message"
+                                                name="message"
+                                                value={this.state.message}
+                                                onChange={this.onChange}></textarea>
+                                        </li>
+                                    </ul>
+                                    <button className="FormButton">
+                                        {this.state.loading
+                                            ? "Sending...."
+                                            : this.state.btnText}
+                                    </button>
+                                </form>
+                            </div>
                             <div
                                 style={{
                                     display: "flex",
-                                    flexDirection: "column"
+                                    flexDirection: "column",
+                                    width: "50%"
                                 }}>
                                 <img
                                     src={ContactPic}
