@@ -12,21 +12,19 @@ import "./styles/Home.css";
 import Gallery from "../components/Gallery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    fab,
     faFacebook,
     faTwitter,
     faYoutube,
     faMedium,
-    faDev,
-    faInstagram
+    faInstagram,
+    faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
 import Lazy from "../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg";
 import { Link } from "react-router-dom";
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
-const url =
-    "https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing";
+const URL ="https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing";
 
 export default class Home extends Component {
     constructor(props) {
@@ -146,7 +144,7 @@ export default class Home extends Component {
                         <img src={undrawAbout} className="imgAboutUndraw"></img>
                         <button
                             onClick={() => {
-                                window.open(url, "_blank");
+                                window.open(URL, "_blank");
                             }}
                             className="AboutButton1">
                             Code of Conduct
@@ -216,48 +214,51 @@ export default class Home extends Component {
                                 justifyContent: "space-between",
                                 width: "80%"
                             }}>
-                            <form className="Form" onSubmit={this.onSubmit}>
-                                <ul>
-                                    <li>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            placeholder="Name"
-                                            value={this.state.name}
-                                            onChange={this.onChange}
-                                        />
-                                    </li>
-                                    <li>
-                                        <input
-                                            type="email"
-                                            id="mail"
-                                            name="email"
-                                            placeholder="Email"
-                                            value={this.state.email}
-                                            onChange={this.onChange}
-                                        />
-                                    </li>
-                                    <li className="li">
-                                        <textarea
-                                            className="textArea"
-                                            id="msg"
-                                            placeholder="Message"
-                                            name="message"
-                                            value={this.state.message}
-                                            onChange={this.onChange}></textarea>
-                                    </li>
-                                </ul>
-                                <button className="FormButton">
-                                    {this.state.loading
-                                        ? "Sending...."
-                                        : this.state.btnText}
-                                </button>
-                            </form>
+                            <div class="Form">
+                                <form style={{height: "100%", width: "100%"}} onSubmit={this.onSubmit}>
+                                    <ul>
+                                        <li>
+                                            <input
+                                                type="text"
+                                                id="name"
+                                                name="name"
+                                                placeholder="Name"
+                                                value={this.state.name}
+                                                onChange={this.onChange}
+                                            />
+                                        </li>
+                                        <li>
+                                            <input
+                                                type="email"
+                                                id="mail"
+                                                name="email"
+                                                placeholder="Email"
+                                                value={this.state.email}
+                                                onChange={this.onChange}
+                                            />
+                                        </li>
+                                        <li className="li">
+                                            <textarea
+                                                className="textArea"
+                                                id="msg"
+                                                placeholder="Message"
+                                                name="message"
+                                                value={this.state.message}
+                                                onChange={this.onChange}></textarea>
+                                        </li>
+                                    </ul>
+                                    <button className="FormButton">
+                                        {this.state.loading
+                                            ? "Sending...."
+                                            : this.state.btnText}
+                                    </button>
+                                </form>
+                            </div>
                             <div
                                 style={{
                                     display: "flex",
-                                    flexDirection: "column"
+                                    flexDirection: "column",
+                                    width: "50%"
                                 }}>
                                 <img
                                     src={ContactPic}
@@ -275,27 +276,45 @@ export default class Home extends Component {
                                         fontSize: "2em"
                                     }}>
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.facebook.com/dscthapar/", "_blank")
+                                        }
                                         icon={faFacebook}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.instagram.com/hacktiet/", "_blank")
+                                        }
                                         icon={faInstagram}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.twitter.com/dsctiet?s=09", "_blank")
+                                        }
                                         icon={faTwitter}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.youtube.com/channel/UCl235NVnbWqqCT7NQAIUzVQ", "_blank")
+                                        }
                                         icon={faYoutube}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://medium.com/@dsc.tiet", "_blank")
+                                        }
                                         icon={faMedium}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
-                                        icon={faDev}
+                                        onClick={()=>
+                                            window.open("https://www.linkedin.com/company/developer-student-club-thapar/?viewAsMember=true", "_blank")
+                                        }
+                                        icon={faLinkedin}
                                         style={{ cursor: "pointer" }}
                                     />
                                 </div>

@@ -3,17 +3,36 @@ import styled from "styled-components";
 import "../pages/styles/Events.css";
 
 export default class CardEvent extends Component {
+
+    state = {
+        topics: []
+    }
+
+    componentDidMount() {
+        this.setState({ topics: this.props.topics })
+    }
+
     render() {
+
+        const topicsToBeRendered = []
+
+        for (const item of this.state.topics) {
+            topicsToBeRendered.push(
+                <li>{item.name}</li>
+            )
+        }
+
+
         return (
             <Container>
                 <SubContainer>
                     <Heading bg={this.props.bg}>
                         <p style={{ margin: "0", textAlign: "center" }}>
-                            Coding Bootcamp 1.0
+                            {this.props.title}
                         </p>
                     </Heading>
                     <SubHeading bg={this.props.bg}>
-                        Learn various technologies and their standards
+                        {this.props.info}
                     </SubHeading>
                     <About>
                         <p>
@@ -21,22 +40,17 @@ export default class CardEvent extends Component {
                                 Topics Covered:
                             </bold>
                             <ul style={{ marginTop: "0" }}>
-                                <li>Web/App development</li>
-                                <li>Software Dev</li>
-                                <li>Data structures and algorithms</li>
-                                <li>Blockchain</li>
-                                <li>IOT</li>
-                                <li>Machine Learning and AI</li>
+                                {topicsToBeRendered}
                             </ul>
                             <bold style={{ fontWeight: "600", color: "black" }}>
                                 Date
                             </bold>
-                            : Week Long event (TBA)
+                            : {this.props.date}
                             <br />
                             <bold style={{ fontWeight: "600", color: "black" }}>
                                 Venue
                             </bold>
-                            : Will be Updated
+                            : {this.props.venue}
                         </p>
                         <Features>
                             <ul className="features">
@@ -44,7 +58,7 @@ export default class CardEvent extends Component {
                                 <li>Projects</li>
                             </ul>
                             <p>
-                                <a className="registerA">Register!</a>
+                                <a className="registerA" href={this.props.link} >Register!</a>
                             </p>
                         </Features>
                     </About>
