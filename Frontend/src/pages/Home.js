@@ -12,12 +12,10 @@ import "./styles/Home.css";
 import Gallery from "../components/Gallery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    fab,
     faFacebook,
     faTwitter,
     faYoutube,
     faMedium,
-    faDev,
     faInstagram,
     faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
@@ -26,8 +24,7 @@ import Lazy from "../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg";
 import { Link } from "react-router-dom";
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
-const url =
-    "https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing";
+const URL ="https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing";
 
 export default class Home extends Component {
     constructor(props) {
@@ -157,7 +154,7 @@ export default class Home extends Component {
                         <img src={undrawAbout} className="imgAboutUndraw"></img>
                         <button
                             onClick={() => {
-                                window.open(url, "_blank");
+                                window.open(URL, "_blank");
                             }}
                             className="AboutButton1">
                             Code of Conduct
