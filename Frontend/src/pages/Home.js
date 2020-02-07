@@ -27,7 +27,7 @@ import { Link } from "react-router-dom";
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
 
-const url = 'https://docs.google.com/document/d/1bbpf78aMSH2ntSZEWR09Q05OVDHFp6IoFlVHtcvC0eQ/edit?usp=sharing';
+const url = 'https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing';
 
 export default class Home extends Component {
     constructor(props) {
