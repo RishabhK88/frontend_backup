@@ -227,7 +227,7 @@ export default class Home extends Component {
                                 width: "80%"
                             }}>
                             <div class="Form">
-                                <form style={{height: "100%", width: "100%"}} onSubmit={this.onSubmit}>
+                                <form style={{ height: "100%", width: "100%" }} onSubmit={this.onSubmit}>
                                     <ul>
                                         <li>
                                             <input
@@ -313,6 +313,12 @@ export default class Home extends Component {
                                     />
                                 </div>
                             </div>
+                        </div>
+                        <br></br>
+                        <hr style={{ width: "100%" }}></hr>
+                        <div className="LogoFooterContainer" style={{display:"flex", justifyContent:"space-between",width:"90%"}}>
+                            <img src={Logo} className="LogoFooter"></img>
+                            <p>© Copyright 2020 DSC TIET | Developed with ❤️</p>
                         </div>
                     </div>
                 </SubMainContainer>
