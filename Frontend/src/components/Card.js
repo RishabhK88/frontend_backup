@@ -8,14 +8,13 @@ export default class Card extends Component {
                 <Image bg={this.props.bg}></Image>
                 <SubContainer>
                     <Heading bg={this.props.bg}>
-                        <p style={{ margin: "0" }}>SIH 2019</p>
+                        <p style={{ margin: "0" }}>{this.props.heading}</p>
                     </Heading>
                     <SubHeading bg={this.props.bg}>
-                        Winner in SIH 2019 Grand Finale Edition
+                        {this.props.sub_heading}
                     </SubHeading>
                     <About>
-                        Working hard is not important working smart is! 2 teams
-                        showed excellence by winning the SIH 2019 Grand Finale
+                        {this.props.content}
                     </About>
                 </SubContainer>
             </Container>

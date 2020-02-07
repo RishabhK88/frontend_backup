@@ -6,7 +6,18 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 export default class Achievments extends Component {
+
 
     state = {
         achievements: [],
@@ -27,7 +38,32 @@ export default class Achievments extends Component {
         this.fetchAchievements();
     }
 
+
+
+    /* renderAchievements = () => {
+        this.state.achievements.map((item, index) => {
+            console.log(item);
+            return (
+                
+            );
+        })
+    } */
+
     render() {
+
+        const achievements = []
+
+        for (const item of this.state.achievements) {
+            achievements.push(
+                <Card
+                    bg={getRandomColor()}
+                    heading={item.title}
+                    sub_heading={item.sub_title}
+                    content={item.content}
+                />
+            )
+        }
+
         return (
             <div>
                 <Nav></Nav>
@@ -36,9 +72,7 @@ export default class Achievments extends Component {
                         We are proud of our achievments
                     </h1>
                     <SubContainer>
-                        <Card bg="red"></Card>
-                        <Card bg="green"></Card>
-                        <Card bg="blue"></Card>
+                        {achievements}
                     </SubContainer>
                 </Container>
             </div>
