@@ -5,7 +5,6 @@ import Nav from "../components/Nav";
 import GoogleAssBg from "../assets/1200px-Google_Assistant_logo.svg.png";
 import Logo from "../assets/unnamed.png";
 import undrawAbout from "../assets/undraw_dev_productivity_umsq.svg";
-
 import TeamPic from "../assets/undraw_team_spirit_hrr4.svg";
 import ContactPic from "../assets/undraw_contact_us_15o2.svg";
 import axios from "axios";
@@ -19,15 +18,16 @@ import {
     faYoutube,
     faMedium,
     faDev,
-    faInstagram
+    faInstagram,
+    faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
 import Lazy from "../assets/tom-morel-hkbQnC7FAqU-unsplash.jpg";
 import { Link } from "react-router-dom";
 axios.defaults.baseURL = "https://dsctiet.pythonanywhere.com/api";
 
-
-const url = 'https://docs.google.com/document/d/1bbpf78aMSH2ntSZEWR09Q05OVDHFp6IoFlVHtcvC0eQ/edit?usp=sharing';
+const url =
+    "https://drive.google.com/file/d/1WtxlBDqnZUh7Os1pSwjvv0WDiaYljB-e/view?usp=sharing";
 
 export default class Home extends Component {
     constructor(props) {
@@ -79,6 +79,8 @@ export default class Home extends Component {
     };
 
     render() {
+        const url =
+            "https://docs.google.com/document/d/1bbpf78aMSH2ntSZEWR09Q05OVDHFp6IoFlVHtcvC0eQ/edit?usp=sharing";
         return (
             <MainContainer>
                 <ResponsiveDiv>
@@ -155,10 +157,9 @@ export default class Home extends Component {
                         <img src={undrawAbout} className="imgAboutUndraw"></img>
                         <button
                             onClick={() => {
-                                window.open(url, '_blank');
+                                window.open(url, "_blank");
                             }}
-                            className="AboutButton1"
-                        >
+                            className="AboutButton1">
                             Code of Conduct
                         </button>
                         <Link to="/communityJoin">
@@ -199,7 +200,6 @@ export default class Home extends Component {
                         style={{
                             height: "100vh",
                             width: "auto",
-			    backgroundColor:"#c1c1c1",
                             // display: "flex",
                             // alignItems: "center",
                             overflow: "hidden"
@@ -227,48 +227,51 @@ export default class Home extends Component {
                                 justifyContent: "space-between",
                                 width: "80%"
                             }}>
-                            <form className="Form" onSubmit={this.onSubmit}>
-                                <ul>
-                                    <li>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            placeholder="Name"
-                                            value={this.state.name}
-                                            onChange={this.onChange}
-                                        />
-                                    </li>
-                                    <li>
-                                        <input
-                                            type="email"
-                                            id="mail"
-                                            name="email"
-                                            placeholder="Email"
-                                            value={this.state.email}
-                                            onChange={this.onChange}
-                                        />
-                                    </li>
-                                    <li className="li">
-                                        <textarea
-                                            className="textArea"
-                                            id="msg"
-                                            placeholder="Message"
-                                            name="message"
-                                            value={this.state.message}
-                                            onChange={this.onChange}></textarea>
-                                    </li>
-                                </ul>
-                                <button className="FormButton">
-                                    {this.state.loading
-                                        ? "Sending...."
-                                        : this.state.btnText}
-                                </button>
-                            </form>
+                            <div class="Form">
+                                <form style={{height: "100%", width: "100%"}} onSubmit={this.onSubmit}>
+                                    <ul>
+                                        <li>
+                                            <input
+                                                type="text"
+                                                id="name"
+                                                name="name"
+                                                placeholder="Name"
+                                                value={this.state.name}
+                                                onChange={this.onChange}
+                                            />
+                                        </li>
+                                        <li>
+                                            <input
+                                                type="email"
+                                                id="mail"
+                                                name="email"
+                                                placeholder="Email"
+                                                value={this.state.email}
+                                                onChange={this.onChange}
+                                            />
+                                        </li>
+                                        <li className="li">
+                                            <textarea
+                                                className="textArea"
+                                                id="msg"
+                                                placeholder="Message"
+                                                name="message"
+                                                value={this.state.message}
+                                                onChange={this.onChange}></textarea>
+                                        </li>
+                                    </ul>
+                                    <button className="FormButton">
+                                        {this.state.loading
+                                            ? "Sending...."
+                                            : this.state.btnText}
+                                    </button>
+                                </form>
+                            </div>
                             <div
                                 style={{
                                     display: "flex",
-                                    flexDirection: "column"
+                                    flexDirection: "column",
+                                    width: "50%"
                                 }}>
                                 <img
                                     src={ContactPic}
@@ -286,27 +289,45 @@ export default class Home extends Component {
                                         fontSize: "2em"
                                     }}>
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.facebook.com/dscthapar/", "_blank")
+                                        }
                                         icon={faFacebook}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.instagram.com/hacktiet/", "_blank")
+                                        }
                                         icon={faInstagram}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.twitter.com/dsctiet?s=09", "_blank")
+                                        }
                                         icon={faTwitter}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://www.youtube.com/channel/UCl235NVnbWqqCT7NQAIUzVQ", "_blank")
+                                        }
                                         icon={faYoutube}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
+                                        onClick={()=>
+                                            window.open("https://medium.com/@dsc.tiet", "_blank")
+                                        }
                                         icon={faMedium}
                                         style={{ cursor: "pointer" }}
                                     />
                                     <FontAwesomeIcon
-                                        icon={faDev}
+                                        onClick={()=>
+                                            window.open("https://www.linkedin.com/company/developer-student-club-thapar/?viewAsMember=true", "_blank")
+                                        }
+                                        icon={faLinkedin}
                                         style={{ cursor: "pointer" }}
                                     />
                                 </div>
@@ -341,217 +362,3 @@ const ResponsiveDiv = styled.div`
         display: none;
     }
 `;
-
-//hahaha
-
-//LOLOL
-
-//ignore the comments below, (for future reference), do not delete pls
-
-// /** @format */
-// var mql = window.matchMedia("(max-width: 600px)");
-
-// function media(e) {
-//     if (e.matches) {
-//         console.log("Matched");
-//         // styles.imgBg1 = {
-//         //     height: "0vh"
-//         // };
-//     } else {
-//         console.log("Not matched");
-//     }
-
-//     mql.addListener(media);
-
-// STYLES
-
-// var styles = {
-//     imgBg1: {
-//         zIndex: "-100",
-//         position: "absolute",
-//         left: "-22vw",
-//         top: "-20vh",
-//         right: "5vw",
-//         bottom: "92vh",
-//         height: "115vh",
-//         // transform: "scale(0.75)",
-//         transform: "rotate(5deg)"
-//     },
-//     Logo: {
-//         height: "10vh",
-//         marginLeft: "40vw",
-//         marginTop: "18vw"
-//     },
-//     HomeText: {
-//         fontSize: "2em",
-//         fontWeight: "500",
-//         color: "#676C72",
-//         marginTop: "0",
-//         marginLeft: "50%"
-//     },
-//     imgBg2: {
-//         position: "absolute", //Absolute positioning(so that it doesnt get afffected by other lements) inside relative positioning, so that i can make it absolute to its parent without making it absolute to the whole page, that causes overflow
-//         margin: "0",
-//         zIndex: "-100",
-//         height: "70%",
-//         bottom: "20%",
-//         left: "83%",
-//         right: "25%",
-//         transform: "scaleX(-1) rotate(20deg)"
-//         // overflow: "hidden",
-//     },
-
-//     imgAboutUndraw: {
-//         position: "absolute", //Absolute positioning(so that it doesnt get afffected by other lements) inside relative positioning, so that i can make it absolute to its parent without making it absolute to the whole page, that causes overflow
-//         margin: "0",
-//         zIndex: "-100",
-//         height: "50%",
-//         bottom: "5%",
-//         left: "2%",
-//         right: "25%",
-//         transform: ""
-//         // overflow: "hidden",
-//     },
-
-//     AboutTextContainer: {
-//         width: "50%",
-//         marginLeft: "35%",
-//         marginTop: "15%"
-//     },
-//     AboutText: {
-//         fontSize: "1.9em",
-//         color: "#676C72",
-//         fontWeight: "400"
-//     },
-
-//     AboutButton1: {
-//         position: "relative",
-//         marginLeft: "35%",
-//         borderStyle: "solid",
-//         borderWidth: "2px",
-//         padding: "20px 30px 20px 30px",
-//         color: "#f3f3f3",
-//         fontSize: "1.5em",
-//         background: "#EA4335",
-//         borderRadius: "1em",
-//         cursor: "pointer"
-//     },
-//     TeamButton: {
-//         position: "absolute",
-//         left: 0,
-//         marginLeft: "5%",
-//         marginTop: "0",
-//         borderStyle: "solid",
-//         borderWidth: "2px",
-//         padding: "20px 30px 20px 30px",
-//         color: "#f3f3f3",
-//         fontSize: "1.5em",
-//         background: "#FBBC05",
-//         borderRadius: "1em",
-//         cursor: "pointer"
-//     },
-//     AboutButton2: {
-//         position: "relative",
-//         marginLeft: "1em",
-//         borderStyle: "solid",
-//         borderColor: "#EA4335",
-//         borderWidth: "2px",
-//         padding: "20px 30px 20px 30px",
-//         color: "#EA4335",
-//         fontSize: "1.5em",
-//         background: "#f3f3f3",
-//         borderRadius: "1em",
-//         cursor: "pointer"
-//     },
-//     TeamTextContainer: {
-//         width: "30%",
-//         marginTop: "15%",
-//         marginLeft: "5%"
-//     },
-//     TeamImage: {
-//         position: "absolute",
-//         top: "10%",
-//         height: "70%",
-//         marginLeft: "50%",
-//         zIndex: "-100"
-//     },
-//     Form: {
-//         height: "90%",
-//         // background: "red",
-//         // marginTop: "5%",
-//         width: "100%",
-//         position: "relative"
-//         // padding: "1em",
-//         // border: "1px solid #CCC",
-//         // borderRadius: "1em",
-//     },
-//     li: {
-//         // background: "yellow",
-//         listStyle: "none",
-//         display: "flex",
-//         flexDirection: "column",
-//         justifyContent: "space-between",
-//         padding: "1em",
-//         // margin: "1em",
-//         marginLeft: "0",
-//         marginBottom: "0"
-//     },
-//     input: {
-//         background: "#f3f3f3",
-//         width: "80%",
-//         fontSize: "1.2em",
-//         fontFamily: "Poppins",
-//         border: "none",
-//         borderBottomStyle: "solid",
-//         borderBottomWidth: "0.1em",
-//         borderBottomColor: "#676C72",
-//         padding: "1em 0 0.5em 0em",
-//         margin: "0.5em",
-//         color: "black",
-//         marginBottom: "0"
-//     },
-//     textArea: {
-//         background: "#f3f3f3",
-//         width: "80%",
-//         fontFamily: "Poppins",
-//         fontSize: "1.2em",
-//         border: "none",
-//         borderBottomStyle: "solid",
-//         borderBottomWidth: "0.1em",
-//         borderBottomColor: "#676C72",
-//         padding: "1em 0 0.5em 0em",
-//         margin: "0.5em",
-//         color: "black",
-//         marginBottom: "0",
-//         verticalAlign: "top",
-//         height: "10em"
-//     },
-//     label: {
-//         background: "pink",
-//         fontSize: "1.2em"
-//     },
-//     ul: {
-//         display: "flex",
-//         flexDirection: "column",
-//         // justifyContent: "space-between",
-//         height: "100%",
-//         margin: "1em",
-//         // background: "grey",
-//         padding: "1em"
-//     },
-//     FormButton: {
-//         position: "absolute",
-//         marginLeft: "2em",
-//         bottom: "0",
-//         // marginLeft: "5%",
-//         borderStyle: "solid",
-//         borderWidth: "2px",
-//         padding: "15px 25px 15px 25px",
-//         color: "#f3f3f3",
-//         fontSize: "1.5em",
-//         background: "#34A853",
-//         borderRadius: "1em",
-//         cursor: "pointer"
-//     }
-// };
-// }
