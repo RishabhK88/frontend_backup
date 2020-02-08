@@ -17,7 +17,7 @@ function Nav(props) {
 
   const {o} = useSpring({
       from:{o:0},
-      o:scroll/100<1?scroll/100:1
+      o:scroll/10<1?scroll/100:1
   })
   
   return (
