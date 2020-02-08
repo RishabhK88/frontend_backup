@@ -21,7 +21,8 @@ export default class Team extends Component {
 
 	state = {
 		teamWiseDetails: [{
-			members: []
+			members: [],
+			heads: []
 		}],
 		isLoading: true
 	}
@@ -56,13 +57,14 @@ export default class Team extends Component {
 
 	render() {
 
-		const members = []
+		const webMembers = []
+		const webHeads = []
 
 		for (const item of this.state.teamWiseDetails[0].members) {
 
 			if (!this.state.isLoading) {
 
-				members.push(
+				webMembers.push(
 					<NoBorderCard
 						title={item.role}
 						name={item.name}
@@ -71,6 +73,21 @@ export default class Team extends Component {
 				)
 			}
 		}
+
+		for (const item of this.state.teamWiseDetails[0].heads) {
+
+			if (!this.state.isLoading) {
+
+				webHeads.push(
+					<NoBorderCard
+						title={item.role}
+						name={item.name}
+						image={item.image}
+					/>
+				)
+			}
+		}
+
 		return (
 			<div>
 				<Nav active="team" />
@@ -110,39 +127,14 @@ export default class Team extends Component {
 							</h1>
 						</div>
 						<div style={styles.cardContainer}>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
+							{webHeads}
+
 						</div>
 						<img src={image2} style={{ height: "300px", width: "700px" }}></img>
 						<div style={{ display: "flex", flexWrap: "wrap", alignContent: "space-around", justifyContent: "center" }}>
 
-							{members}
+							{webMembers}
 
-						</div>
-						<div style={{ display: "flex", alignItems: "center" }}>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
 						</div>
 					</div>
 					<div style={styles.pageContainer}>
