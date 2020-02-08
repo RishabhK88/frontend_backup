@@ -27,7 +27,6 @@ export default class Events extends Component {
         axios.get("/events/").then(res => {
             let data = res.data
             this.setState({ events: data, isLoading: false })
-            // console.log(this.state.events)
         });
     }
 
