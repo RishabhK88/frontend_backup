@@ -30,8 +30,9 @@ export default class Team extends Component {
 	fetchTeamData = () => {
 		axios.get("/team/").then(res => {
 			let data = res.data
-			this.setState({ teamWiseDetails: data, isLoading: false })
-			console.log(this.state.teamWiseDetails)
+			this.setState({ teamWiseDetails: data, isLoading: false }, () => {
+				console.log(this.state.teamWiseDetails)
+			})
 		});
 	}
 
@@ -59,35 +60,86 @@ export default class Team extends Component {
 
 		const webMembers = []
 		const webHeads = []
+		const mlMembers = []
+		const mlHeads = []
 
-		for (const item of this.state.teamWiseDetails[0].members) {
+		if (!this.state.isLoading) {
 
-			if (!this.state.isLoading) {
 
-				webMembers.push(
-					<NoBorderCard
-						title={item.role}
-						name={item.name}
-						image={item.image}
-					/>
-				)
+			for (const item of this.state.teamWiseDetails[0].members) {
+
+				if (!this.state.isLoading) {
+
+					webMembers.push(
+						<NoBorderCard
+							title={item.role}
+							name={item.name}
+							image={item.image}
+							linkedin={item.linkedin_url}
+							github={item.github_url}
+							twitter={item.twitter_url}
+							medium={item.medium_url}
+						/>
+					)
+				}
 			}
-		}
 
-		for (const item of this.state.teamWiseDetails[0].heads) {
+			for (const item of this.state.teamWiseDetails[3].members) {
 
-			if (!this.state.isLoading) {
+				if (!this.state.isLoading) {
 
-				webHeads.push(
-					<NoBorderCard
-						title={item.role}
-						name={item.name}
-						image={item.image}
-					/>
-				)
+					mlMembers.push(
+						<NoBorderCard
+							title={item.role}
+							name={item.name}
+							image={item.image}
+							linkedin={item.linkedin_url}
+							github={item.github_url}
+							twitter={item.twitter_url}
+							medium={item.medium_url}
+						/>
+					)
+				}
 			}
-		}
 
+			for (const item of this.state.teamWiseDetails[0].heads) {
+
+				if (!this.state.isLoading) {
+
+					webHeads.push(
+						<NoBorderCard
+							title={item.role}
+							name={item.name}
+							image={item.image}
+							linkedin={item.linkedin_url}
+							github={item.github_url}
+							twitter={item.twitter_url}
+							medium={item.medium_url}
+						/>
+					)
+				}
+			}
+
+			for (const item of this.state.teamWiseDetails[3].heads) {
+
+				if (!this.state.isLoading) {
+
+					mlHeads.push(
+						<NoBorderCard
+							title={item.role}
+							name={item.name}
+							image={item.image}
+							linkedin={item.linkedin_url}
+							github={item.github_url}
+							twitter={item.twitter_url}
+							medium={item.medium_url}
+						/>
+					)
+				}
+			}
+
+
+		}
 		return (
 			<div>
 				<Nav active="team" />
@@ -252,52 +304,13 @@ export default class Team extends Component {
 							</h1>
 						</div>
 						<div style={styles.cardContainer}>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/user/erondu"}
-							/>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
+							{mlHeads}
 						</div>
 						<img src={mlImage} style={{ height: "275px", width: "700px" }}></img>
-						<div style={{ display: "flex", alignItems: "center" }}>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
+						<div style={{ display: "flex", flexWrap: "wrap", alignContent: "space-around", justifyContent: "center" }}>
+							{mlMembers}
 						</div>
-						<div style={{ display: "flex", alignItems: "center" }}>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
-							<NoBorderCard
-								title={"Head"}
-								name={"Jaskeerat Singh Randhawa"}
-								image={"https://source.unsplash.com/random"}
-							/>
-						</div>
+
 					</div>
 					<div style={styles.pageContainer}>
 						<div style={{ marginTop: "5em" }}>
@@ -410,7 +423,7 @@ export default class Team extends Component {
 						</div>
 					</div>
 				</div>
-			</div>
+			</div >
 		);
 	}
 }

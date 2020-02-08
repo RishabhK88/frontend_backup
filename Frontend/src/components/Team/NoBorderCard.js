@@ -31,16 +31,16 @@ export default class CardHead extends Component {
 
 					<p className="nameNoBorder">{this.props.name}</p>
 					<div className="iconContainer">
-						<a className="icons" href={this.props.href}>
+						<a className="icons" href={this.props.linkedin}>
 							<FontAwesomeIcon icon={faLinkedin}></FontAwesomeIcon>
 						</a>
-						<a className="icons" href={this.props.href}>
+						<a className="icons" href={this.props.github}>
 							<FontAwesomeIcon icon={faGithubSquare}></FontAwesomeIcon>
 						</a>
-						<a className="icons" href={this.props.href}>
+						<a className="icons" href={this.props.medium}>
 							<FontAwesomeIcon icon={faMedium}></FontAwesomeIcon>
 						</a>
-						<a className="icons" href={this.props.href}>
+						<a className="icons" href={this.props.twitter}>
 							<FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
 						</a>
 					</div>
