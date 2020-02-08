@@ -28,7 +28,6 @@ export default class Achievments extends Component {
         axios.get("/achievements/").then(res => {
             let data = res.data
             this.setState({ achievements: data, isLoading: false })
-            console.log(this.state.achievements)
         });
     }
 
