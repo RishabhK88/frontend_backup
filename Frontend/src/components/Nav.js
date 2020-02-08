@@ -27,41 +27,13 @@ function Nav(props) {
           style={{
             position: "sticky",
             top: "0",
-            //boxShadow: "0 0px 0px 0 rgba(0, 0, 0, 0.0)",
-            //background:"transparent",
             zIndex:100,
             background:o.interpolate(o=>`rgba(255, 255, 255, ${o}`),
-            boxShadow:o.interpolate(o=>`0 ${o*2}px ${o*12}px 0 rgba(0,0,0,${o*.18})`)
+            boxShadow:o.interpolate(o=>`0 ${o*4}px ${o*8}px 0 rgba(0,0,0,${o*.2}),0 ${o*6}px ${o*20}px 0 rgba(0,0,0,${o*.20})`)
           }}
         >
           <NavSubPart active={props.active} />
         </animated.div>
-      {/* ) : (
-        <animated.div
-          style={{
-            position: "sticky",
-            top: "0",
-            background: "white",
-            zIndex: 100,
-            boxShadow:
-              "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
-          }}
-        >
-          <NavSubPart active={props.active} />
-        </animated.div>
-      )} */}
-      {/* <animated.dev
-
-        style={{
-            position:'sticky',
-            top:0,
-            boxShadow:"0 0px 0px 0 rgba(0, 0, 0, 0.0)",
-            backgroundColor:'white',
-
-        }}
-      >
-          <NavSubPart/>
-      </animated.dev> */}
     </React.Fragment>
   );
 }
