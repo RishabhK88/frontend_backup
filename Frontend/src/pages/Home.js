@@ -157,7 +157,10 @@ export default class Home extends Component {
             >
               Code of Conduct
             </button>
-            <Link to="/communityJoin">
+            <Link to="/communityJoin" target="_blank" onClick={event => {
+              event.preventDefault()
+              window.open('https://join.slack.com/t/dscthapar-gspatiala/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M');
+            }}>
               <button className="AboutButton2">Join our Slack!</button>
             </Link>
           </div>
