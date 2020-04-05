@@ -185,7 +185,7 @@ export default class Home extends Component {
               </h2>
             </div>
             <img src={TeamPic} className="TeamImage"></img>
-            <button className="TeamButton">Meet our Team</button>
+            <Link to='/team'><button className="TeamButton">Meet our Team</button></Link>
           </div>
 
           <div
