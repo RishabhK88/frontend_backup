@@ -79,6 +79,39 @@ export default class Home extends Component {
         });
       });
   };
+  HoverText = styled.button`
+	:hover{
+    box-shadow: 7px 7px #ff9999;
+    transition: .3s;
+  }
+  
+`
+HoverText1 = styled.button`
+:hover{
+  box-shadow: 7px 7px #cfd968;
+  transition: .3s;
+}
+
+`
+HoverText2 = styled.button`
+:hover{
+  box-shadow: 5px 5px #39c44e;
+  transition: .3s;
+}
+
+`
+HoverText3 = styled.button`
+:hover{
+  ${'' /* box-shadow: 6px 6px #ff9999; */}
+  transition: .3s;
+  background: #ea4335;
+  color: #ffffff;
+}
+
+
+`
+
+
 
   render() {
     const url =
@@ -149,19 +182,19 @@ export default class Home extends Component {
             </div>
             <img src={GoogleAssBg} className="imgBg2"></img>
             <img src={undrawAbout} className="imgAboutUndraw"></img>
-            <button
+            <this.HoverText
               onClick={() => {
                 window.open(URL, "_blank");
               }}
               className="AboutButton1"
             >
               Code of Conduct
-            </button>
+            </this.HoverText>
             <Link to="/communityJoin" target="_blank" onClick={event => {
               event.preventDefault()
               window.open('https://join.slack.com/t/dscthapar-gspatiala/shared_invite/enQtNzU2MzA2MjcxNzkyLTkwNDRiNWMzYjUzYjNjYjM0M2JhMDgwOTI3MGQwYWU1NzNlNGMxZGVhNzk0MGZiYTI5YzgwZDhiMTk1MjE4M2M');
             }}>
-              <button className="AboutButton2">Join our Slack!</button>
+              <this.HoverText3 className="AboutButton2">Join our Slack!</this.HoverText3>
             </Link>
           </div>
 
@@ -185,7 +218,7 @@ export default class Home extends Component {
               </h2>
             </div>
             <img src={TeamPic} className="TeamImage"></img>
-            <Link to='/team'><button className="TeamButton">Meet the Team</button></Link>
+            <Link to='/team'><this.HoverText1 className="TeamButton">Meet the Team</this.HoverText1></Link>
           </div>
 
           <div
@@ -260,9 +293,9 @@ export default class Home extends Component {
                       ></textarea>
                     </li>
                   </ul>
-                  <button className="FormButton">
+                  <this.HoverText2 className="FormButton">
                     {this.state.loading ? "Sending...." : this.state.btnText}
-                  </button>
+                  </this.HoverText2>
                 </form>
               </div>
               <div
