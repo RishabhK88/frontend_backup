@@ -3,25 +3,20 @@ import styled from "styled-components";
 import "../pages/styles/Events.css";
 
 export default class CardEvent extends Component {
-
     state = {
         topics: []
-    }
+    };
 
     componentDidMount() {
-        this.setState({ topics: this.props.topics })
+        this.setState({ topics: this.props.topics });
     }
 
     render() {
-
-        const topicsToBeRendered = []
+        const topicsToBeRendered = [];
 
         for (const item of this.state.topics) {
-            topicsToBeRendered.push(
-                <li>{item.name}</li>
-            )
+            topicsToBeRendered.push(<li>{item.name}</li>);
         }
-
 
         return (
             <Container>
@@ -58,7 +53,9 @@ export default class CardEvent extends Component {
                                 <li>Projects</li>
                             </ul>
                             <p>
-                                <a className="registerA" href={this.props.link} >Register!</a>
+                                <a className="registerA" href={this.props.link}>
+                                    Register!
+                                </a>
                             </p>
                         </Features>
                     </About>
